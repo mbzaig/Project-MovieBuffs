@@ -1,2 +1,2 @@
 var giphyAPIKey=giphyAPI;
-var omdbAPIKey=omdbAPI;
+var marvelAPIKey=marvelAPI;

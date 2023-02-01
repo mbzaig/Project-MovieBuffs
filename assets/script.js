@@ -1,9 +1,9 @@
 
-var giphyAPIKey="71Fx9egDGUwycT4oDZ7Bak9l6ifEFDNW";
-var rottenAPIKey=" ";
+var giphyAPIKey=giphyAPI;
+var marvelAPIKey=marvelAPI;
 
 
-var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=71Fx9egDGUwycT4oDZ7Bak9l6ifEFDNW";
+var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key="+giphyAPIKey;
 
     $.ajax({
       url: queryURL,

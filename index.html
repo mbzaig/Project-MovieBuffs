@@ -8,8 +8,50 @@
     <link rel="stylesheet" href="assets/style.css" />
     <title>Movie Buffs</title>
 </head>
+
 <body>
+    <!--Nav bar added - the user will be able click the links which will go to the relevant sections of the page.-->
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Movie Buffs</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+        <!--Jumbotron included to tell the user what the website is about and how they can use it.-->
+    <section> 
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Fluid jumbotron</h1>
+              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+          </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+
     <script src="./assets/apiKey.js"></script>    
 <script src="./assets/script.js"></script>
 </body>
 </html>
+

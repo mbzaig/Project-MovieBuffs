@@ -1,0 +1,77 @@
+
+
+body {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*Navbar CSS */
+.customNav {
+    position: fixed;
+    width: 100%;
+    background-color: black !important;
+    z-index: 10;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+.customNav a {
+    color: white !important;
+    size: 100px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 0 !important;
+}
+
+.navbar-brand img {
+    padding-right: 15px;
+    width: 100px;
+}
+
+/* nav bar links moved to right*/
+.nav-item {
+    margin: 0px 20px;
+    text-decoration: none;
+}
+
+.nav-item a {
+    box-shadow: inset 0px 5px 5px 0px white (238, 42, 238, 0.452);
+    color: var(--flor);
+    margin: 0 -.30rem;
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+
+.nav-item a:hover {
+    box-shadow: inset 0px 5px 5px 0px white (238, 42, 238, 0.452);
+    color: var(--flor);
+}
+
+.navbar-toggler {
+    background-color: black;
+
+}
+
+.navbar-collapse a {
+    box-shadow: inset 500px 2px 0px 0px white (238, 42, 238, 0.452);
+    margin: 0 -.30rem;
+    transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+
+}
+
+/*Jumbotron CSS */
+.jumbotron {
+    color: white;
+    text-align: right ;
+    background-image: url("./images/jumbotronBG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(50vh -15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+}

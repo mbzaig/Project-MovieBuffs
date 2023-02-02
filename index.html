@@ -34,10 +34,7 @@
                         <a class="nav-link" href="#">Link</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+               
             </div>
         </nav>
     </header>
@@ -49,6 +46,10 @@
                 <h1 class="display-4">Movie Buffs!</h1>
                 <p class="lead">Search for your favourite Marvel Character and be prepapred for some crazy GIFs!!!.
                 </p>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" id="comic-input" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" id="comic-search" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </section>
@@ -56,17 +57,17 @@
     <!--Bootstrap cards added which will show the Marvel film which is pulled from the API 
         When the button is clicked this is when the GIFs will pop up below this section-->
     <section class="marvelMovies" id="movies">
-        <h2 class="heading">Here Are Some Marvel Movies</h2>
-        <div class="divider-line"></div>
+        <h2 class="heading">Your Chosen Comic...</h2>
+        <p class="heading-info">If you're happy with your choice, click on the Get Some GIFs button below to get your comic 
+            book GIF fix for the day! 
+        </p>
         <div class="row">
             <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <p class="card-text"></p>
                         <a href="#" class="btn btn-primary">Get Some GIFs</a>
                     </div>
                 </div>

@@ -70,17 +70,21 @@ function validSearch(e) {
 // uses comicInput value to generate X GIFs based on the input from the search form
 // 
 // gifSubmit1.addEventListener("click", generateGIF);
-function generateGIF(comicName) {
   var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + giphyAPIKey;
 
 $.ajax({
   url: queryURL,
   method: "GET",
-}).then(function (response) {
-  console.log(response);
+}).then(function (response1) {
+  console.log(response1);
+  getGIF(response1);
 });
 
-}
 
 // create function to pull data we want to display on HTML from the query
-
+function getGIF(response1) {
+  var jiffy = response1.data
+  const gifLength = 5;
+  for (var i = 0; i < gifLength; i++) {
+    $('.card-body').append("<img src='"+jiffy[i].images.original.url+"'/>")
+}}

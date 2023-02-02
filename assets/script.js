@@ -3,6 +3,8 @@ var marvelAPIKey = marvelAPI; //Private API Key Marvel
 var marvelPAPIKey = marvelPAPI; //Public API Key Marvel
 var comicSearch = document.getElementById("comic-search");
 var comicInput = document.getElementById("comic-input");
+var gifSubmit1 = document.getElementById("button1");
+
 
 // var ts = 0;
 // var strHash = 0;
@@ -27,7 +29,8 @@ function marvelSearch(comicName){
   }
   // marvelSearch();
 
-// event listener for button click on form 
+// event listener for button click on form following user input
+// !variable just means if it's empty
 comicSearch.addEventListener("click", validSearch);
 function validSearch(e) {
   if (!comicInput) {
@@ -36,8 +39,11 @@ function validSearch(e) {
     e.preventDefault();
     var comicName = comicInput.value.trim(); // trim() removes only spaces, anything else to be removed, put in ""
     marvelSearch(comicName);
+    
   }
+  generateGIF(comicName);
 }
+
 // create function to pull data we want to display on HTML from the query
 
 
@@ -52,7 +58,20 @@ function validSearch(e) {
 
 
 // Giphy
-var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + giphyAPIKey;
+// var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + giphyAPIKey;
+
+// $.ajax({
+//   url: queryURL,
+//   method: "GET",
+// }).then(function (response) {
+//   console.log(response);
+// });
+
+// uses comicInput value to generate X GIFs based on the input from the search form
+// 
+// gifSubmit1.addEventListener("click", generateGIF);
+function generateGIF(comicName) {
+  var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + giphyAPIKey;
 
 $.ajax({
   url: queryURL,
@@ -60,6 +79,8 @@ $.ajax({
 }).then(function (response) {
   console.log(response);
 });
+
+}
 
 // create function to pull data we want to display on HTML from the query
 

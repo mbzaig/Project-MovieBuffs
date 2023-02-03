@@ -4,7 +4,7 @@ var marvelPAPIKey = marvelPAPI; //Public API Key Marvel
 var comicSearch = document.getElementById("comic-search");
 var comicInput = document.getElementById("comic-input");
 var gifSubmit1 = document.getElementById("button1");
-
+var getMarvelGiphy = "";
 
 // var ts = 0;
 // var strHash = 0;
@@ -44,25 +44,38 @@ function validSearch(e) {
     generateGIF(comicName);
 
   }
-  
+
 }
 
-function displayMarvel(marvelResponse) 
-{
+function displayMarvel(marvelResponse) {
   console.log("displayMarvelcAlled")
   var marvelData = marvelResponse.data;
-  imageExtension = "." + marvelData.results[0].images[0].extension;
-   console.log(imageExtension);  
+if (marvelData.results!=""){
   // console.log(marvelData.results[0].images[0].path+imageExtension);
   for (var z = 0; z < marvelData.results.length; z++) {
-    console.log(z)
-    console.log("Marvel response=" + marvelData.results[z].images[0].path+imageExtension);
 
-   $('.marvelCard').append("<img src=" + marvelData.results[z].images[0].path+imageExtension +">")
+    var imageExtension = "." + marvelData.results[z].images[0].extension;
+    console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
 
+    $('.marvelCard').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
+    var marvelTitle = marvelData.results[z].title;
+    console.log(marvelTitle);
+    getMarvelGiphy = marvelTitle;
+
+
+  }
+}
+  else {
+    alert("No Comic found with this name, enjoy some GIFs instead");
   }
 
 }
+
+
+  
+  
+
+
 
 // create function to pull data we want to display on HTML from the query
 
@@ -96,7 +109,7 @@ function displayMarvel(marvelResponse)
 function generateGIF(comicName) {
 
   var giphySearch = comicName + "+comic"
-  console.log("comicNAMe "+"https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en")
+  console.log("comicNAMe " + "https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en")
 
   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en";
   $.ajax({

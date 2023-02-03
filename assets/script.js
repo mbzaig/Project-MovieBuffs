@@ -58,16 +58,17 @@ if (marvelData.results!=""){
     console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
 
     $('.marvelCard').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
-    var marvelTitle = marvelData.results[z].title;
+    var marvelTitle = marvelData.results[z].title; // maybe use this to feed into the GIPHY search instead of user input 
     console.log(marvelTitle);
     getMarvelGiphy = marvelTitle;
 
 
   }
 }
-  else {
-    alert("No Comic found with this name, enjoy some GIFs instead");
-  }
+  // else {
+  //   // alert("No Comic found with this name, enjoy some GIFs instead"); // something instead of an alert, need a modal instead // modal OK button could take user straight to giphy section
+  //   return
+  // }
 
 }
 

@@ -62,7 +62,6 @@ body {
 
 /*Jumbotron CSS */
 .jumbotron {
-    color: red;
     text-align: center;
     background-image: url("./images/jumbotronBG.jpg");
     background-size: cover;
@@ -74,10 +73,15 @@ body {
     margin: 0px auto;
 }
 
-h1 {
+.jumbotron h1 {
+    color: red;
+    font-family:sans-serif;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.411);
-
+    background-color: rgba(255, 255, 255, 0.719);
+    font-weight: bold;
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 .jumbotron p {
@@ -230,3 +234,13 @@ h1 {
     align-items: center;
 }
 
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e600, 0 0 40px #1be600, 0 0 50px #00e61f, 0 0 60px #13e600, 0 0 70px #00e632;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #aed423, 0 0 40px #aed423, 0 0 50px #aed423, 0 0 60px #aed423, 0 0 70px #aed423, 0 0 80px #aed423;
+    }
+  }
+
+  

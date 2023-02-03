@@ -70,8 +70,11 @@ function validSearch(e) {
 // uses comicInput value to generate X GIFs based on the input from the search form
 // 
 // gifSubmit1.addEventListener("click", generateGIF);
-  var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + giphyAPIKey;
-
+  
+  
+ 
+function generateGIF(comicName){
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key="+giphyAPIKey+"&q="+comicName+"spider+man+comics&limit=5&offset=0&rating=g&lang=en" ;
 $.ajax({
   url: queryURL,
   method: "GET",
@@ -79,12 +82,17 @@ $.ajax({
   console.log(response1);
   getGIF(response1);
 });
-
+}
 
 // create function to pull data we want to display on HTML from the query
 function getGIF(response1) {
-  var jiffy = response1.data
-  const gifLength = 5;
+  var jiffy = response1.data;
+  console.log("Giphy Response data "+jiffy);
+  const gifLength = jiffy.length;
+  console.log("response lenght"+gifLength);
+
   for (var i = 0; i < gifLength; i++) {
-    $('.card-body').append("<img src='"+jiffy[i].images.original.url+"'/>")
+
+
+    $('.giphyCard').append("<img src="+jiffy[i].images.original.url+"/>")
 }}

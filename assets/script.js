@@ -47,44 +47,24 @@ function validSearch(e) {
 
 }
 
+// create function to pull data we want to display on HTML from the query
+
 function displayMarvel(marvelResponse) {
   console.log("displayMarvelcAlled")
   var marvelData = marvelResponse.data;
-if (marvelData.results!=""){
-  // console.log(marvelData.results[0].images[0].path+imageExtension);
-  for (var z = 0; z < marvelData.results.length; z++) {
-
-    var imageExtension = "." + marvelData.results[z].images[0].extension;
-    console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
-
-    $('.marvelCard').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
-    var marvelTitle = marvelData.results[z].title; // maybe use this to feed into the GIPHY search instead of user input 
-    console.log(marvelTitle);
-    getMarvelGiphy = marvelTitle;
-
-
+  $('.comics-container').empty();
+  if (marvelData.results!=""){
+    for (var z = 0; z < marvelData.results.length; z++) {
+      var imageExtension = "." + marvelData.results[z].images[0].extension;
+      console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
+      $('.comics-container').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
+      var marvelTitle = marvelData.results[z].title;
+      console.log(marvelTitle);
+      getMarvelGiphy = marvelTitle;
+    }
+    fetch(finalQuery);
   }
 }
-  // else {
-  //   // alert("No Comic found with this name, enjoy some GIFs instead"); // something instead of an alert, need a modal instead // modal OK button could take user straight to giphy section
-  //   return
-  // }
-
-}
-
-
-  
-  
-
-
-
-// create function to pull data we want to display on HTML from the query
-
-
-
-
-
-
 
 
 
@@ -123,12 +103,28 @@ function generateGIF(comicName) {
 }
 
 // create function to pull data we want to display on HTML from the query
+// function getGIF(giphyResponse) {
+//   var jiffy = giphyResponse.data;
+
+//   for (var i = 0; i < jiffy.length; i++) {
+
+
+//     $('.giphyCard').append("<img src=" + jiffy[i].images.original.url + "/>")
+//   }
+// }
 function getGIF(giphyResponse) {
   var jiffy = giphyResponse.data;
 
   for (var i = 0; i < jiffy.length; i++) {
+    var gifCard = `
+      <div class="card" style="width: 18rem;">
+        <img src="${jiffy[i].images.original.url}" class="card-img-top" alt="GIF">
+        <div class="card-body">
+          <p class="card-text">${jiffy[i].title}</p>
+        </div>
+      </div>
+    `;
 
-
-    $('.giphyCard').append("<img src=" + jiffy[i].images.original.url + "/>")
+    $('.giphyCards').append(gifCard);
   }
 }

@@ -23,8 +23,9 @@ function marvelSearch(comicName){
   $.ajax({
       url: marvelQuery,
       method: "GET"
-    }).then(function(response) {
-      console.log(response);
+    }).then(function(marvelResponse) {
+      console.log(marvelResponse);
+      displayMarvel(marvelResponse);
     });
   }
   // marvelSearch();
@@ -37,12 +38,16 @@ function validSearch(e) {
     return;
   }else {
     e.preventDefault();
-    var comicName = comicInput.value.trim(); // trim() removes only spaces, anything else to be removed, put in ""
+    var comicName = comicInput.value.replace(/ /g,"+");; // trim() removes only spaces, anything else to be removed, put in ""
+    console.log(comicName);
     marvelSearch(comicName);
+    
     
   }
   generateGIF(comicName);
 }
+
+
 
 // create function to pull data we want to display on HTML from the query
 
@@ -74,19 +79,22 @@ function validSearch(e) {
   
  
 function generateGIF(comicName){
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key="+giphyAPIKey+"&q="+comicName+"spider+man+comics&limit=5&offset=0&rating=g&lang=en" ;
+
+  var giphySearch= comicName+"+comic"
+  
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key="+giphyAPIKey+"&q="+giphySearch+"spider+man+comics&limit=4&offset=0&rating=g&lang=en" ;
 $.ajax({
   url: queryURL,
   method: "GET",
-}).then(function (response1) {
-  console.log(response1);
-  getGIF(response1);
+}).then(function (giphyResponse) {
+  console.log(giphyResponse);
+  getGIF(giphyResponse);
 });
 }
 
 // create function to pull data we want to display on HTML from the query
-function getGIF(response1) {
-  var jiffy = response1.data;
+function getGIF(giphyResponse) {
+  var jiffy = giphyResponse.data;
   console.log("Giphy Response data "+jiffy);
   const gifLength = jiffy.length;
   console.log("response lenght"+gifLength);

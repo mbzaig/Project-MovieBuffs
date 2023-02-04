@@ -77,7 +77,6 @@ body {
     color: red;
     font-family:sans-serif;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.719);
     font-weight: bold;
     -webkit-animation: glow 2s ease-in-out infinite alternate;
     -moz-animation: glow 2s ease-in-out infinite alternate;
@@ -88,6 +87,16 @@ body {
     background-color: rgba(255, 255, 255, 0.411);
     color: black;
     font-weight: bold;
+
+}
+.form-inline {
+    justify-content: center !important;
+    align-content: center !important;
+}
+
+#comic-input {
+    border: black 3px solid;
+    -webkit-box-shadow: 2px 1px 8px green !important;
 
 }
 

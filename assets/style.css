@@ -90,6 +90,13 @@ body {
     font-weight: bold;
 
 }
+
+.clear{
+    background-color: saddlebrown !important;
+  }
+  .btn-groupjumbo{
+    padding: 20px;
+  }
 .form-inline {
     justify-content: center !important;
     align-content: center !important;
@@ -276,4 +283,3 @@ body {
     }
   }
 
-  

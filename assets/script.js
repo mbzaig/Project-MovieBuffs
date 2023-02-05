@@ -5,6 +5,8 @@ var comicSearch = document.getElementById("comic-search");
 var comicInput = document.getElementById("comic-input");
 var gifSubmit1 = document.getElementById("button1");
 var getMarvelGiphy = "";
+var searchedComic = "";
+var clearHistory = document.getElementById("clearBtn");
 
 // var ts = 0;
 // var strHash = 0;
@@ -32,7 +34,34 @@ function marvelSearch(comicName) {
 
 // event listener for button click on form following user input
 // !variable just means if it's empty
+
+//**********This Piece of code is not currently working need to speak with sandy */
+// $("#leftBtn").on("click", function () {
+
+// comicInput="iron man"//(localStorage.getItem("0"));
+// validSearch();
+
+// })
+
+// $("#middleBtn").on("click", function () {
+
+//   comicInput=(localStorage.getItem("1"));
+//   validSearch();
+
+//   })
+
+
+//   $("#rightBtn").on("click", function () {
+
+//     comicInput=(localStorage.getItem("2"));
+//     validSearch();
+
+//     })
+
+
+
 comicSearch.addEventListener("click", validSearch);
+
 function validSearch(e) {
   if (!comicInput) {
     return;
@@ -40,6 +69,8 @@ function validSearch(e) {
     e.preventDefault();
     var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
     console.log(comicName);
+
+    searchedComic = comicInput.value;
     marvelSearch(comicName);
     generateGIF(comicName);
 
@@ -47,13 +78,15 @@ function validSearch(e) {
 
 }
 
+
+
 // create function to pull data we want to display on HTML from the query
 
 function displayMarvel(marvelResponse) {
-  console.log("displayMarvelcAlled")
+  // console.log("displayMarvelcAlled")
   var marvelData = marvelResponse.data;
   $('.comics-container').empty();
-  if (marvelData.results!=""){
+  if (marvelData.results != "") {
     for (var z = 0; z < marvelData.results.length; z++) {
       var imageExtension = "." + marvelData.results[z].images[0].extension;
       console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
@@ -61,7 +94,9 @@ function displayMarvel(marvelResponse) {
       var marvelTitle = marvelData.results[z].title;
       console.log(marvelTitle);
       getMarvelGiphy = marvelTitle;
+
     }
+    saveHistory();
     fetch(finalQuery);
   }
 }
@@ -69,6 +104,57 @@ function displayMarvel(marvelResponse) {
 
 
 
+
+
+
+let buttonsLength = 0;
+
+function saveHistory() {
+
+  while (document.getElementById("leftBtn").innerHTML != searchedComic && document.getElementById("middleBtn").innerHTML != searchedComic && document.getElementById("rightBtn").innerHTML != searchedComic) {
+    if (buttonsLength < 3) {
+      buttonsLength++;
+
+    }
+    else {
+      buttonsLength = 0;
+
+    }
+
+
+
+    switch (buttonsLength) {
+      case 0:
+        document.getElementById("leftBtn").innerHTML = searchedComic;
+        localStorage.setItem("0", searchedComic)
+
+        break;
+      case 1:
+        localStorage.setItem("1", searchedComic)
+        document.getElementById("middleBtn").innerHTML = searchedComic;
+        break;
+      case 2:
+        localStorage.setItem("2", searchedComic)
+        document.getElementById("rightBtn").innerHTML = searchedComic;
+        break;
+      default:
+        break;
+    }
+  }
+};
+for (i = 0; i < 3; i++) {
+  document.getElementById("leftBtn").innerText = (localStorage.getItem("0"));
+
+  document.getElementById("middleBtn").innerText = (localStorage.getItem("1"));
+  document.getElementById("rightBtn").innerText = (localStorage.getItem("2"));
+}
+
+clearHistory.addEventListener("click", clearLocal);
+
+function clearLocal() {
+  window.localStorage.clear();
+
+}
 
 
 // Giphy
@@ -114,6 +200,7 @@ function generateGIF(comicName) {
 // }
 function getGIF(giphyResponse) {
   var jiffy = giphyResponse.data;
+  $('.giphyCards').empty();
 
   for (var i = 0; i < jiffy.length; i++) {
     var gifCard = `

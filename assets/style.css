@@ -75,10 +75,10 @@ body {
 
 .jumbotron h1 {
     color: red;
-    font-family:sans-serif;
+    font-family: sans-serif;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.719);
     font-weight: bold;
+    font-size: 95px;
     -webkit-animation: glow 2s ease-in-out infinite alternate;
     -moz-animation: glow 2s ease-in-out infinite alternate;
     animation: glow 2s ease-in-out infinite alternate;
@@ -90,11 +90,21 @@ body {
     font-weight: bold;
 
 }
+.form-inline {
+    justify-content: center !important;
+    align-content: center !important;
+}
 
-.divider-line {
-    background-color: red;
-    height: 3px;
-    margin: 5px;
+#comic-input {
+    border: black 3px solid;
+    -webkit-box-shadow: 2px 1px 8px green !important;
+
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    -webkit-box-shadow: 2px 1px 8px green !important;
 }
 
 .heading {
@@ -121,7 +131,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: black;
-    height: 500px;
+    height: 800px;
     margin: 0px auto;
     justify-content: center !important;
     align-items: center !important;
@@ -132,12 +142,35 @@ body {
     justify-content: center !important;
     align-items: center !important;
     margin: 0 auto;
+    display: flex !important;
+}
+
+.comics-container{
+    background-color: white !important;
+    display: inline-flex !important;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    max-height: 750px !important;
+    max-width: 83.5%;
+    margin-top: 10px;
+    
+}
+
+.comics-container img {
+    height: 600px;
+    display: inline-flex !important;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .cardContainer {
     justify-content: center !important;
     align-items: center !important;
     margin-top: 30px;
+    height: 28vh;
 }
 
 /*added box shadow border to each card*/

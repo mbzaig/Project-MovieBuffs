@@ -49,12 +49,13 @@ body {
 }
 
 .navbar-toggler {
-    background-color: black;
+    background-color: white;
+    color: black;
 
 }
 
 .navbar-collapse a {
-    box-shadow: inset 500px 2px 0px 0px white (238, 42, 238, 0.452);
+    box-shadow: inset 500px 2px 0px 0px black (238, 42, 238, 0.452);
     margin: 0 -.30rem;
     transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
 
@@ -91,12 +92,14 @@ body {
 
 }
 
-.clear{
+.clear {
     background-color: saddlebrown !important;
-  }
-  .btn-groupjumbo{
+}
+
+.btn-groupjumbo {
     padding: 20px;
-  }
+}
+
 .form-inline {
     justify-content: center !important;
     align-content: center !important;
@@ -115,11 +118,12 @@ body {
 }
 
 .heading {
-    background-color: rgba(255, 255, 255, 0.441);
+    background-color: rgba(255, 255, 255, 0.589);
     text-align: center;
     padding-top: 10px;
     margin-top: 5px;
-    font-size: 40px;
+    font-size: 50px;
+    font-weight: bold;
     color: red;
 
 }
@@ -152,7 +156,7 @@ body {
     display: flex !important;
 }
 
-.comics-container{
+.comics-container {
     background-color: white !important;
     display: inline-flex !important;
     align-items: center;
@@ -161,7 +165,7 @@ body {
     max-height: 750px !important;
     max-width: 83.5%;
     margin-top: 10px;
-    
+
 }
 
 .comics-container img {
@@ -170,7 +174,7 @@ body {
     margin: 2px;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .cardContainer {
@@ -209,7 +213,7 @@ body {
 
 .marvelGifs h2 {
     padding-bottom: 20px;
-}   
+}
 
 /*Footer CSS*/
 .footerContainer {
@@ -295,10 +299,36 @@ body {
 
 @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e600, 0 0 40px #1be600, 0 0 50px #00e61f, 0 0 60px #13e600, 0 0 70px #00e632;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e600, 0 0 40px #1be600, 0 0 50px #00e61f, 0 0 60px #13e600, 0 0 70px #00e632;
     }
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #aed423, 0 0 40px #aed423, 0 0 50px #aed423, 0 0 60px #aed423, 0 0 70px #aed423, 0 0 80px #aed423;
-    }
-  }
 
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #aed423, 0 0 40px #aed423, 0 0 50px #aed423, 0 0 60px #aed423, 0 0 70px #aed423, 0 0 80px #aed423;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 1500px) {
+
+    .jumbotron{
+
+        max-width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+
+    .marvelMovies {
+        max-width: 100%;
+        max-height:  50%;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .comics-container {
+        display: flex;
+        max-width: 100%;
+        max-height:  50%;
+    }
+
+}

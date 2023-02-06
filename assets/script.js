@@ -36,46 +36,58 @@ function marvelSearch(comicName) {
 // !variable just means if it's empty
 
 //**********This Piece of code is not currently working need to speak with sandy */
-// $("#leftBtn").on("click", function () {
+$("#leftBtn").on("click", function () {
+  comicInput.value = localStorage.getItem("0");
+  //console.log(localStorage.getItem("0"));
+  validSearch(comicInput.value);
+});
 
-// comicInput="iron man"//(localStorage.getItem("0"));
-// validSearch();
-
-// })
-
-// $("#middleBtn").on("click", function () {
-
-//   comicInput=(localStorage.getItem("1"));
-//   validSearch();
-
-//   })
+$("#middleBtn").on("click", function () {
+  comicInput.value = localStorage.getItem("1");
+  //console.log(localStorage.getItem("1"));
+  validSearch(comicInput.value);
+});
 
 
-//   $("#rightBtn").on("click", function () {
-
-//     comicInput=(localStorage.getItem("2"));
-//     validSearch();
-
-//     })
+$("#rightBtn").on("click", function () {
+  comicInput.value = localStorage.getItem("2");
+  //console.log(localStorage.getItem("2"));
+  validSearch(comicInput.value);
+});
 
 
 
 comicSearch.addEventListener("click", validSearch);
 
-function validSearch(e) {
-  if (!comicInput) {
+// function validSearch(event) {
+//   event.preventDefault();
+//   if (!comicInput) {
+//     return;
+//   } else {
+//     var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
+//     console.log(comicName);
+
+//     searchedComic = comicInput.value;
+//     marvelSearch(comicName);
+//     generateGIF(comicName);
+
+//   }
+
+// }
+
+function validSearch() {
+  console.log(comicInput.value);
+  //event.preventDefault();
+  if (!comicInput.value) {
     return;
   } else {
-    e.preventDefault();
     var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
     console.log(comicName);
 
     searchedComic = comicInput.value;
     marvelSearch(comicName);
     generateGIF(comicName);
-
   }
-
 }
 
 
@@ -100,10 +112,6 @@ function displayMarvel(marvelResponse) {
     fetch(finalQuery);
   }
 }
-
-
-
-
 
 
 

@@ -32,7 +32,8 @@ SO THAT I can laugh at them
 ✔️ Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
 
 
-![Screenshot of the desired webpage appearance](./images/Screenshot.PNG)
+![Screenshot of the desired webpage appearance](./assets/images/functionality-screenshot.PNG)
+
 
 ## Deployed Page
 
@@ -42,27 +43,27 @@ SO THAT I can laugh at them
 
 * [JavaScript](https://www.javascript.com/)
 * [CSS]
-* Bootstrap
-* jQuery
-* Marvel Developer API
-* GIPHY
+* [Bootstrap]
+* [jQuery]
+* [Marvel_Developer_API]
+* [GIPHY]
 
 ## What we learned during this process
 
-*
+* "Git commands and complexities increase with team work, and good organisation is essential to avoid issues" - **Natalie**
 *
 *
 *
 
 ## Authors
 
-* **Natalie Navickas** - *Initial Work* - [NatalieNavickas](https://github.com/NNavickas)
+* *Initial Work* - [Noel Galvin](https://github.com/ngalvin1991)
 
-* **Noel Galvin** - *Initial Work* - [NoelGalvin](https://github.com/ngalvin1991)
+* *Initial Work* - [Natalie Navickas](https://github.com/NNavickas)
 
-* **Maz ** - *Initial Work* - [Maz](https://github.com/Trys-Ter0)
+* *Initial Work* - [Maz Trystero](https://github.com/Trys-Ter0)
 
-* **Muzzamil Baig** - *Initial Work* - [Muzzamil Baig](https://github.com/mbzaig)
+* *Initial Work* - [Muzzamil Baig](https://github.com/mbzaig)
 
 ## Acknowledgments
 

@@ -32,7 +32,7 @@ SO THAT I can laugh at them
 ✔️ Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
 
 
-![Screenshot of the desired webpage appearance](/assets/images/functionality-screenshot.PNG)
+![Screenshot of the desired webpage appearance](./assets/images/functionality-screenshot.PNG)
 
 
 ## Deployed Page
@@ -49,9 +49,9 @@ SO THAT I can laugh at them
 ## What we learned during this process
 
 * "Git commands and complexities increase with team work, and good organisation is essential to avoid issues" - **Natalie**
-*
-*
-*
+* "I wish I invited Nat and Noel to my birthday party" - **Muzzamil**
+* "It's harder than I thought keeping to the MVP. If we'd had more time it would be amazing" - **Noel**
+* " " - **Maz**
 
 ## Authors
 
@@ -65,4 +65,4 @@ SO THAT I can laugh at them
 
 ## Acknowledgments
 
-* 
+* Thanks for the support Sandy

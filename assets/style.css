@@ -86,7 +86,7 @@ body {
 }
 
 .jumbotron p {
-    background-color: rgba(255, 255, 255, 0.411);
+    background-color: rgba(255, 255, 255, 0.808);
     color: black;
     font-weight: bold;
 
@@ -107,7 +107,7 @@ body {
 
 #comic-input {
     border: black 3px solid;
-    -webkit-box-shadow: 2px 1px 8px green !important;
+    box-shadow: 2px 1px 8px green !important;
 
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .heading {
-    background-color: rgba(255, 255, 255, 0.589);
+    background-color: rgba(255, 255, 255, 0.747);
     text-align: center;
     padding-top: 10px;
     margin-top: 5px;
@@ -157,7 +157,6 @@ body {
 }
 
 .comics-container {
-    background-color: white !important;
     display: inline-flex !important;
     align-items: center;
     align-content: center;
@@ -188,7 +187,8 @@ body {
 .card {
     background-color: white;
     margin: 10px !important;
-    height: 28vh;
+    margin-top: 25px;
+    height: 55vh;
     width: auto;
     border: black;
     color: red;
@@ -196,24 +196,33 @@ body {
     justify-content: center;
     text-align: center;
     border: 5px solid black;
-    -webkit-box-shadow: 2px 1px 8px red !important;
+    box-shadow: 2px 1px 8px red !important;
 }
 
-.marvelGifs {
+.marvelGifs  {
     background-image: url(./images/gifsectionBG.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     color: black;
-    height: 500px;
+    height: 700px;
     margin: 0px auto;
     justify-content: center !important;
     align-items: center !important;
     align-content: center;
+    object-fit: contain !important;
+}
+
+.giphyCards img {
+    margin-top: 3px;
+    height: 400px;
+    justify-content: center;
+    object-fit: contain;
 }
 
 .marvelGifs h2 {
     padding-bottom: 20px;
 }
+
 
 /*Footer CSS*/
 .footerContainer {
@@ -297,7 +306,7 @@ body {
     padding-left: 3px;
 }
 
-@-webkit-keyframes glow {
+@keyframes glow {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e600, 0 0 40px #1be600, 0 0 50px #00e61f, 0 0 60px #13e600, 0 0 70px #00e632;
     }
@@ -307,28 +316,49 @@ body {
     }
 }
 
-@media (min-width: 300px) and (max-width: 1500px) {
+@media (min-width: 300px) and (max-width: 1200px) {
 
     .jumbotron{
-
-        max-width: 100%;
         height: 100%;
         margin-bottom: 10px;
     }
 
-    .marvelMovies {
-        max-width: 100%;
-        max-height:  50%;
+    .comics-container {
+        display: inline-block !important;
+        height: 3000px;
+        margin-top: 10px;
+    
+    }
+    
+    .comics-container img {
+        height: 350px;
+        display: block !important;
+        margin: 10px;
+        object-fit: contain;
+    
     }
 
-    .row {
+    .foottitle h5 {
+        margin-bottom: 2px;
+    }
+
+    .footContainer {
         display: block;
     }
 
-    .comics-container {
-        display: flex;
-        max-width: 100%;
-        max-height:  50%;
+    .nav-link {
+        display: inline-block;
+
     }
 
+    .social {
+        justify-content: space-around;
+    }
+
+
+
+    .fa-brands {
+        display: flex;
+        object-fit: contain;
+    }
 }

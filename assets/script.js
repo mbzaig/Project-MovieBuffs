@@ -109,7 +109,7 @@ function displayMarvel(marvelResponse) {
 
     }
     saveHistory();
-    fetch(finalQuery);
+    //fetch(finalQuery);
   }
 }
 

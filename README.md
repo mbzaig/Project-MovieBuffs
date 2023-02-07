@@ -40,7 +40,7 @@ SO THAT I can laugh at them
 ## Built With
 
 * [JavaScript](https://www.javascript.com/)
-* [CSS]
+* CSS
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://jquery.com/)
 * [Marvel_Developer_API](https://developer.marvel.com/)
@@ -51,15 +51,12 @@ SO THAT I can laugh at them
 * "Git commands and complexities increase with team work, and good organisation is essential to avoid issues" - **Natalie**
 * "I wish I invited Nat and Noel to my birthday party" - **Muzzamil**
 * "It's harder than I thought keeping to the MVP. If we'd had more time it would be amazing" - **Noel**
-* " " - **Maz**
 
 ## Authors
 
 * *Initial Work* - [Noel Galvin](https://github.com/ngalvin1991)
 
 * *Initial Work* - [Natalie Navickas](https://github.com/NNavickas)
-
-* *Initial Work* - [Maz Trystero](https://github.com/Trys-Ter0)
 
 * *Initial Work* - [Muzzamil Baig](https://github.com/mbzaig)
 

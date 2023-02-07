@@ -4,10 +4,14 @@ var marvelAPIKey = marvelAPI; //Private API Key Marvel
 var marvelPAPIKey = marvelPAPI; //Public API Key Marvel
 var comicSearch = document.getElementById("comic-search");
 var comicInput = document.getElementById("comic-input");
-var gifSubmit1 = document.getElementById("button1");
-var getMarvelGiphy = "";
 var searchedComic = "";
 var clearHistory = document.getElementById("clearBtn");
+
+// event listener for page loading
+// document.addEventListener('DOMContentLoaded', function() {
+//   var soundbite = document.getElementById("soundbite");
+//   soundbite.loop = true;
+// });
 
 
 //****************Marvel-Section************

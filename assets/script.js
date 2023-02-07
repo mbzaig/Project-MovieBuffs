@@ -1,3 +1,4 @@
+//*********Global Variable************ */
 var giphyAPIKey = giphyAPI;
 var marvelAPIKey = marvelAPI; //Private API Key Marvel
 var marvelPAPIKey = marvelPAPI; //Public API Key Marvel
@@ -8,10 +9,8 @@ var getMarvelGiphy = "";
 var searchedComic = "";
 var clearHistory = document.getElementById("clearBtn");
 
-// var ts = 0;
-// var strHash = 0;
 
-//Marvel
+//****************Marvel-Section************
 
 //Marvel API Call structure : http://gateway.marvel.com/v1/public/comics?ts=1&apikey=PublicAPI&hash=md5(ts+privateAPI+PublicAPI) (the hash value is the md5 digest of 1abcd1234)
 function marvelSearch(comicName) {
@@ -32,10 +31,8 @@ function marvelSearch(comicName) {
 }
 // marvelSearch();
 
-// event listener for button click on form following user input
-// !variable just means if it's empty
 
-//**********This Piece of code is not currently working need to speak with sandy */
+// event listener for button click from history
 $("#leftBtn").on("click", function () {
   comicInput.value = localStorage.getItem("0");
   //console.log(localStorage.getItem("0"));
@@ -55,36 +52,18 @@ $("#rightBtn").on("click", function () {
   validSearch1(comicInput.value);
 });
 
-
-
+// event listener for button click on form following user input
 comicSearch.addEventListener("click", validSearch);
-
-// function validSearch(event) {
-//   event.preventDefault();
-//   if (!comicInput) {
-//     return;
-//   } else {
-//     var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
-//     console.log(comicName);
-
-//     searchedComic = comicInput.value;
-//     marvelSearch(comicName);
-//     generateGIF(comicName);
-
-//   }
-
-// }
-
+// !variable just means if it's empty
 function validSearch(e) {
   console.log(comicInput.value);
   //event.preventDefault();
   if (!comicInput.value) {
     return;
   } else {
-    e.preventDefault();
-    var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
+    e.preventDefault(); // Need prevent default, otherwise the page keeps refreshing when you hit search.
+    var comicName = comicInput.value.replace(/ /g, "+");; // this piece of code replaced blank space with a +
     console.log(comicName);
-    
     searchedComic = comicInput.value;
     marvelSearch(comicName);
     generateGIF(comicName);
@@ -92,21 +71,19 @@ function validSearch(e) {
 }
 function validSearch1() {
   console.log(comicInput.value);
-  //event.preventDefault();
+  //event.preventDefault(); search does not work with prevent default
   if (!comicInput.value) {
     return;
   } else {
-    
-    var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
+
+    var comicName = comicInput.value.replace(/ /g, "+");;
     console.log(comicName);
-    
+
     searchedComic = comicInput.value;
     marvelSearch(comicName);
     generateGIF(comicName);
   }
 }
-
-
 
 // create function to pull data we want to display on HTML from the query
 
@@ -116,7 +93,7 @@ function displayMarvel(marvelResponse) {
   $('.comics-container').empty();
   if (marvelData.results != "") {
     for (var z = 0; z < marvelData.results.length; z++) {
-      
+
       var imageExtension = "." + marvelData.results[z].images[0].extension;
       console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
       $('.comics-container').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
@@ -126,16 +103,14 @@ function displayMarvel(marvelResponse) {
 
     }
     saveHistory();
-    //fetch(finalQuery);
+   
   }
 }
-
-
 
 let buttonsLength = 0;
 
 function saveHistory() {
-
+// Only adds a search term to local storage if it is not already existent in the storage
   while (document.getElementById("leftBtn").innerHTML != searchedComic && document.getElementById("middleBtn").innerHTML != searchedComic && document.getElementById("rightBtn").innerHTML != searchedComic) {
     if (buttonsLength < 3) {
       buttonsLength++;
@@ -147,7 +122,7 @@ function saveHistory() {
     }
 
 
-
+// switch statement to store in local storage
     switch (buttonsLength) {
       case 0:
         document.getElementById("leftBtn").innerHTML = searchedComic;
@@ -167,43 +142,27 @@ function saveHistory() {
     }
   }
 };
+
+// gets item from local storage and displays it on the button
 for (i = 0; i < 3; i++) {
   document.getElementById("leftBtn").innerText = (localStorage.getItem("0"));
-
   document.getElementById("middleBtn").innerText = (localStorage.getItem("1"));
   document.getElementById("rightBtn").innerText = (localStorage.getItem("2"));
 }
-
+// when clear history button is clicked, the function removes everything from local storage and reloads the page
 clearHistory.addEventListener("click", clearLocal);
 
 function clearLocal() {
   window.localStorage.clear();
   location.reload();
-
 }
 
-
-// Giphy
-// var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + giphyAPIKey;
-
-// $.ajax({
-//   url: queryURL,
-//   method: "GET",
-// }).then(function (response) {
-//   console.log(response);
-// });
-
-// uses comicInput value to generate X GIFs based on the input from the search form
-// 
-// gifSubmit1.addEventListener("click", generateGIF);
-
-
+// ****************Giphy Section**************
 
 function generateGIF(comicName) {
-
+// API Call for generating GIF
   var giphySearch = comicName + "+comic"
   console.log("comicNAMe " + "https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en")
-
   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en";
   $.ajax({
     url: queryURL,
@@ -214,20 +173,10 @@ function generateGIF(comicName) {
   });
 }
 
-// create function to pull data we want to display on HTML from the query
-// function getGIF(giphyResponse) {
-//   var jiffy = giphyResponse.data;
-
-//   for (var i = 0; i < jiffy.length; i++) {
-
-
-//     $('.giphyCard').append("<img src=" + jiffy[i].images.original.url + "/>")
-//   }
-// }
+// Function for displaying gif response.
 function getGIF(giphyResponse) {
   var jiffy = giphyResponse.data;
   $('.giphyCards').empty();
-
   for (var i = 0; i < jiffy.length; i++) {
     var gifCard = `
       <div class="card" style="width: 18rem;">

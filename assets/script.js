@@ -39,20 +39,20 @@ function marvelSearch(comicName) {
 $("#leftBtn").on("click", function () {
   comicInput.value = localStorage.getItem("0");
   //console.log(localStorage.getItem("0"));
-  validSearch(comicInput.value);
+  validSearch1(comicInput.value);
 });
 
 $("#middleBtn").on("click", function () {
   comicInput.value = localStorage.getItem("1");
   //console.log(localStorage.getItem("1"));
-  validSearch(comicInput.value);
+  validSearch1(comicInput.value);
 });
 
 
 $("#rightBtn").on("click", function () {
   comicInput.value = localStorage.getItem("2");
   //console.log(localStorage.getItem("2"));
-  validSearch(comicInput.value);
+  validSearch1(comicInput.value);
 });
 
 
@@ -75,15 +75,31 @@ comicSearch.addEventListener("click", validSearch);
 
 // }
 
-function validSearch() {
+function validSearch(e) {
   console.log(comicInput.value);
   //event.preventDefault();
   if (!comicInput.value) {
     return;
   } else {
+    e.preventDefault();
     var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
     console.log(comicName);
-
+    
+    searchedComic = comicInput.value;
+    marvelSearch(comicName);
+    generateGIF(comicName);
+  }
+}
+function validSearch1() {
+  console.log(comicInput.value);
+  //event.preventDefault();
+  if (!comicInput.value) {
+    return;
+  } else {
+    
+    var comicName = comicInput.value.replace(/ /g, "+");; // trim() removes only spaces, anything else to be removed, put in ""
+    console.log(comicName);
+    
     searchedComic = comicInput.value;
     marvelSearch(comicName);
     generateGIF(comicName);
@@ -100,6 +116,7 @@ function displayMarvel(marvelResponse) {
   $('.comics-container').empty();
   if (marvelData.results != "") {
     for (var z = 0; z < marvelData.results.length; z++) {
+      
       var imageExtension = "." + marvelData.results[z].images[0].extension;
       console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
       $('.comics-container').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
@@ -161,6 +178,7 @@ clearHistory.addEventListener("click", clearLocal);
 
 function clearLocal() {
   window.localStorage.clear();
+  location.reload();
 
 }
 

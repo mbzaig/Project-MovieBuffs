@@ -7,11 +7,20 @@ var comicInput = document.getElementById("comic-input");
 var searchedComic = "";
 var clearHistory = document.getElementById("clearBtn");
 
+// var sound = document.getElementById("soundbite");
+
+// function autoNotify() {
+//   sound.play(); //https://developer.chrome.com/blog/autoplay/ this is why it doesn't like this specific piece
+// }
+
+
 // event listener for page loading
-// document.addEventListener('DOMContentLoaded', function() {
-//   var soundbite = document.getElementById("soundbite");
-//   soundbite.loop = true;
-// });
+function autoNotify() {
+  
+document.addEventListener('DOMContentLoaded', function() {
+  var soundbite = document.getElementById("soundbite");
+  soundbite.loop = true;
+})};
 
 
 //****************Marvel-Section************

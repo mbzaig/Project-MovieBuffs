@@ -15,10 +15,15 @@
     <title>Comic Buffs</title>
 </head>
 
-<body>
+<body onload="autoNotify()">
     <!--sound bite to play on page load-->
-    <!-- <embed src="./assets/the-avengers-sound-effect.mp3" loop="true" autostart="true" width="2"height="0"> -->
-        <audio id="soundbite" src="./assets/the-avengers-sound-effect.mp3" loop="true" autoplay="true" muted="false"></audio>
+    <audio id ="soundbite">
+        <source src="./assets/the-avengers-sound-effect.mp3" type="audio/mp3"> <!--3rd attempt-->
+    </audio>
+
+    <!-- <embed src="./assets/the-avengers-sound-effect.mp3" loop="true" autostart="true" width="2"height="0"> --> <!--2nd attempt-->
+
+        <!-- <audio id="soundbite" src="./assets/the-avengers-sound-effect.mp3" loop="true" autoplay="true" muted="false"></audio> --> <!--1st attempt-->
 
     <!--Nav bar added - the user will be able click the links which will go to the relevant sections of the page.-->
     <header>

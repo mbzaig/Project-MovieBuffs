@@ -16,6 +16,10 @@
 </head>
 
 <body>
+    <!--sound bite to play on page load-->
+    <!-- <embed src="./assets/the-avengers-sound-effect.mp3" loop="true" autostart="true" width="2"height="0"> -->
+        <audio id="soundbite" src="./assets/the-avengers-sound-effect.mp3" loop="true" autoplay="true" muted="false"></audio>
+
     <!--Nav bar added - the user will be able click the links which will go to the relevant sections of the page.-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light customNav">
@@ -59,7 +63,7 @@
                     
                 </div>
                 <div class="btn-group btn-groupjumbo" role="group" aria-label="Basic example">
-                    
+
                     <button id="clearBtn" type="button" class="btn btn-secondary clear">Clear History</button>
                 </div>
 
@@ -78,46 +82,26 @@
         </h2>
         <div class="row marvelCard ">
             <div class="comics-container col-lg-2 col-md-4 col-sm-6">
-                <!-- <div class="card" style="width: 18rem;">
-                    <img src="https://placehold.co/400x300" class="card-img-top " alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p> -->
-                <!-- <a href="#" class="btn btn-primary" id="button1">Get Some GIFs</a> -->
+
             </div>
         </div>
         </div>
 
 
         <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            <!-- <div class="card" style="width: 18rem;">
-                    <img src="https://placehold.co/400x300" class="card-img-top " alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                         <a href="#" class="btn btn-primary" id="button2">Get Some GIFs</a> -->
+            
         </div>
         </div>
         </div>
 
         <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            <!-- <div class="card " style="width: 18rem;">
-                    <img src="https://placehold.co/400x300" class="card-img-top " alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                         <a href="#" class="btn btn-primary" id="button3">Get Some GIFs</a> -->
+
         </div>
         </div>
         </div>
 
         <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            <!-- <div class="card " style="width: 18rem;">
-                    <img src="https://placehold.co/400x300" class="card-img-top " alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                         <a href="#" class="btn btn-primary" id="button4">Get Some GIFs</a> -->
+
         </div>
         </div>
         </div>
@@ -130,33 +114,7 @@
     <!--This section will show the GIFs when they are called from the Giphy API-->
     <section class="marvelGifs" id="gifs">
         <h2 class="heading">Here are your GIFs!!!</h2>
-        <!-- <div class="row">
-            <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-                <span class="card-border">
-                    <div class="card" style="width: 18rem;">
-                </span>
-            </div>
-        </div>
 
-        <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            <span class="card-border">
-                <div class="card" style="width: 18rem;">
-            </span>
-        </div>
-        </div>
-
-        <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            <span class="card-border">
-                <div class="card" style="width: 18rem;">
-            </span>
-        </div>
-        </div>
-
-        <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            <span class="card-border">
-                <div class="card" style="width: 18rem;">
-            </span>
-        </div> -->
 
         <div class=" row giphyCards">
             <!-- bootstrap cards will be appended here -->

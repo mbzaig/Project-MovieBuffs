@@ -32,21 +32,19 @@ SO THAT I can laugh at them
 ✔️ Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
 
 
-![Screenshot of the desired webpage appearance](./assets/images/functionality-screenshot.PNG)
+![Screenshot of the desired webpage appearance](/assets/images/functionality-screenshot.PNG)
 
 
 ## Deployed Page
-
-
 
 ## Built With
 
 * [JavaScript](https://www.javascript.com/)
 * [CSS]
-* [Bootstrap]
-* [jQuery]
-* [Marvel_Developer_API]
-* [GIPHY]
+* [Bootstrap](https://getbootstrap.com/)
+* [jQuery](https://jquery.com/)
+* [Marvel_Developer_API](https://developer.marvel.com/)
+* [GIPHY](https://developers.giphy.com/explorer/)
 
 ## What we learned during this process
 

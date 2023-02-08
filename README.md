@@ -34,6 +34,10 @@ SO THAT I can laugh at them
 
 ![Screenshot of the desired webpage appearance](./assets/images/functionality-screenshot.PNG)
 
+---
+
+![Site Demo](./assets/images/siteDemo.gif)
+
 
 ## Deployed Page
 

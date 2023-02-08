@@ -15,12 +15,12 @@ var clearHistory = document.getElementById("clearBtn");
 
 
 // event listener for page loading
-function autoNotify() {
-  
-document.addEventListener('DOMContentLoaded', function() {
-  var soundbite = document.getElementById("soundbite");
-  soundbite.loop = true;
-})};
+// function autoNotify() {
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var soundbite = document.getElementById("soundbite");
+//   soundbite.loop = true;
+// })};
 
 
 //****************Marvel-Section************
@@ -103,27 +103,44 @@ function validSearch1() {
 function displayMarvel(marvelResponse) {
   // console.log("displayMarvelcAlled")
   var marvelData = marvelResponse.data;
-  $('.comics-container').empty();
-  if (marvelData.results != "") {
+  let myModal = new bootstrap.Modal(document.getElementById('marvelModal'), {});
+  let myModalText = "";
+  $('.comics-container').empty();//Empties out the container for new results
+  if (marvelData.results != "") {// checks if the marvel results are not empty
     for (var z = 0; z < marvelData.results.length; z++) {
+      if (marvelData.results[z].images != "") {// checks that the marvel comic has images associated with the title
 
-      var imageExtension = "." + marvelData.results[z].images[0].extension;
-      console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
-      $('.comics-container').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
-      var marvelTitle = marvelData.results[z].title;
-      console.log(marvelTitle);
-      getMarvelGiphy = marvelTitle;
+        var imageExtension = "." + marvelData.results[z].images[0].extension;
 
+        console.log("Marvel response=" + marvelData.results[z].images[0].path + imageExtension);
+        $('.comics-container').append("<img src=" + marvelData.results[z].images[0].path + imageExtension + ">")
+        var marvelTitle = marvelData.results[z].title;
+        console.log(marvelTitle);
+        getMarvelGiphy = marvelTitle;
+
+      }
+      else {//If an image is not associated with a result shows the modal with below message
+
+        myModalText = "Sorry the Comic you searched does not have 1 or more images ...You can still enjoy some funny Gifs";
+        document.getElementById("modalText").innerHTML = myModalText;
+        myModal.show();
+      }
     }
     saveHistory();
-   
+
+  }
+  else {// if a comic is not found then shows a modal with below message   
+    myModalText = "Sorry the Comic you searched for is not in Marvel Database...You can still enjoy some funny Gifs";
+    document.getElementById("modalText").innerHTML = myModalText;
+    myModal.show();
+
   }
 }
 
 let buttonsLength = 0;
 
 function saveHistory() {
-// Only adds a search term to local storage if it is not already existent in the storage
+  // Only adds a search term to local storage if it is not already existent in the storage
   while (document.getElementById("leftBtn").innerHTML != searchedComic && document.getElementById("middleBtn").innerHTML != searchedComic && document.getElementById("rightBtn").innerHTML != searchedComic) {
     if (buttonsLength < 3) {
       buttonsLength++;
@@ -135,7 +152,7 @@ function saveHistory() {
     }
 
 
-// switch statement to store in local storage
+    // switch statement to store in local storage
     switch (buttonsLength) {
       case 0:
         document.getElementById("leftBtn").innerHTML = searchedComic;
@@ -173,7 +190,7 @@ function clearLocal() {
 // ****************Giphy Section**************
 
 function generateGIF(comicName) {
-// API Call for generating GIF
+  // API Call for generating GIF
   var giphySearch = comicName + "+comic"
   console.log("comicNAMe " + "https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en")
   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + giphyAPIKey + "&q=" + giphySearch + "&limit=4&offset=0&rating=g&lang=en";

@@ -15,15 +15,18 @@
     <title>Comic Buffs</title>
 </head>
 
-<body onload="autoNotify()">
+<body>
+    <!-- <body onload="autoNotify()"> dont need this  -->
     <!--sound bite to play on page load-->
-    <audio id ="soundbite">
-        <source src="./assets/the-avengers-sound-effect.mp3" type="audio/mp3"> <!--3rd attempt-->
-    </audio>
+    <!-- <audio id ="soundbite">
+        <source src="./assets/the-avengers-sound-effect.mp3" type="audio/mp3"> 3rd attempt
+    </audio> -->
 
-    <!-- <embed src="./assets/the-avengers-sound-effect.mp3" loop="true" autostart="true" width="2"height="0"> --> <!--2nd attempt-->
+    <embed src="./assets/the-avengers-sound-effect.mp3" loop="true" autostart="true" width="2" height="0">
+    <!--2nd attempt-->
 
-        <!-- <audio id="soundbite" src="./assets/the-avengers-sound-effect.mp3" loop="true" autoplay="true" muted="false"></audio> --> <!--1st attempt-->
+    <!-- <audio id="soundbite" src="./assets/the-avengers-sound-effect.mp3" loop="true" autoplay="true" muted="false"></audio> -->
+    <!--1st attempt-->
 
     <!--Nav bar added - the user will be able click the links which will go to the relevant sections of the page.-->
     <header>
@@ -65,7 +68,7 @@
                     <button id="leftBtn" type="button" class="btn btn-secondary"></button>
                     <button id="middleBtn" type="button" class="btn btn-secondary"></button>
                     <button id="rightBtn" type="button" class="btn btn-secondary"></button>
-                    
+
                 </div>
                 <div class="btn-group btn-groupjumbo" role="group" aria-label="Basic example">
 
@@ -94,7 +97,7 @@
 
 
         <div class="cardContainer col-lg-2 col-md-4 col-sm-6">
-            
+
         </div>
         </div>
         </div>
@@ -128,6 +131,28 @@
 
         </div>
     </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="marvelModal" tabindex="-1" aria-labelledby="marvelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="marvelModalLabel">NOTE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+                   <p id="modalText"> Sorry the Comic you searched for is not in Marvel Database...You can still enjoy some funny Gifs</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--Footer added including site links and links to contributor github profiles - linkedin to be added-->
@@ -166,9 +191,11 @@
                                                 class="fa fa-github fa-2x"></i></a></li>
                                 </ul>
                                 <ul class="list-unstyled list-inline social text-center">
-                                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/noel-galvin-58b602262/"><i
+                                    <li class="list-inline-item"><a
+                                            href="https://www.linkedin.com/in/noel-galvin-58b602262/"><i
                                                 class="fa-brands fa-linkedin fa-2x"></i></a></li>
-                                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/natalienavickas/"><i
+                                    <li class="list-inline-item"><a
+                                            href="https://www.linkedin.com/in/natalienavickas/"><i
                                                 class="fa-brands fa-linkedin fa-2x link-two"></i></a></li>
                                     <li class="list-inline-item"><a href="https://www.linkedin.com/in/muzzamilb/"><i
                                                 class="fa-brands fa-linkedin fa-2x link-three"></i></a></li>
@@ -176,7 +203,7 @@
                             </div>
                         </div>
 
-                        
+
                     </div>
                     <p class="footer-text">Created by Movie/Comic Buffs (2023)</p>
                 </div>
@@ -187,8 +214,12 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.myersdaily.org/joseph/javascript/md5.js"></script>
     <script src="./assets/apiKey.js"></script>

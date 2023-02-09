@@ -1,7 +1,21 @@
 # Comic Buffs
 Project 1 of the Front End Web Develoment coding bootcamp in partnership with EdX
 
-## User Story
+
+
+## Table of Contents 
+
+If your README is long, add a table of contents to make it easy for users to find what they need.
+
+- [User Story](#User-Story)
+- [Grading Requirements](#Grading-Requirements)
+- [Usage](#usage)
+- [Deployed Page](#Deployed-Page)
+- [Credits](#Authors)
+- [License](#license)
+
+
+## User-Story
 
 ```
 AS A comic buff
@@ -9,7 +23,7 @@ I WANT to see funny GIFs when I search for my favourite Marvel comic
 SO THAT I can laugh at them
 ```
 ---
-## Grading Requirements
+## Grading-Requirements
 
 ✔️ Use Bootstrap.
 
@@ -58,7 +72,7 @@ Giphy API - https://developers.giphy.com
 ![Site Demo](./assets/images/siteDemo.gif)
 
 ---
-## Deployed Page
+## Deployed-Page
 https://mbzaig.github.io/Project-MovieBuffs/
 
 ---

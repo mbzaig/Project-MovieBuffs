@@ -5,8 +5,6 @@ Project 1 of the Front End Web Develoment coding bootcamp in partnership with Ed
 
 ## Table of Contents 
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
 - [User Story](#User-Story)
 - [Grading Requirements](#Grading-Requirements)
 - [Usage](#usage)

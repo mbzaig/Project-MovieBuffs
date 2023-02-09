@@ -111,7 +111,7 @@ https://mbzaig.github.io/Project-MovieBuffs/
 
 MIT License
 
-Copyright (c) [2022] [Muzzamil Baig]
+Copyright (c) [2023] [Movie-Buffs]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

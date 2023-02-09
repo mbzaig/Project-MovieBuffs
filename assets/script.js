@@ -1,11 +1,15 @@
 //*********Global Variable************ */
-var giphyAPIKey = giphyAPI;
-var marvelAPIKey = marvelAPI; //Private API Key Marvel
-var marvelPAPIKey = marvelPAPI; //Public API Key Marvel
+var giphyAPIKey = "";//giphyAPI;
+var marvelAPIKey = "";//marvelAPI; //Private API Key Marvel
+var marvelPAPIKey = ""; //Public API Key Marvel
 var comicSearch = document.getElementById("comic-search");
 var comicInput = document.getElementById("comic-input");
 var searchedComic = "";
 var clearHistory = document.getElementById("clearBtn");
+let marvelAPIinput="";//Private API Key Marvel
+let marvelPAPIinput="";//Public API Key Marvel
+let giphyAPIinput="";//Public API Key Marvel
+var apiKeyInput=document.getElementById("apiKeySubmit");
 
 // var sound = document.getElementById("soundbite");
 
@@ -21,6 +25,68 @@ var clearHistory = document.getElementById("clearBtn");
 //   var soundbite = document.getElementById("soundbite");
 //   soundbite.loop = true;
 // })};
+marvelAPIKey=localStorage.getItem("A");
+marvelPAPIKey=localStorage.getItem("B");
+giphyAPIKey=localStorage.getItem("C");
+    
+    
+//***************Enter API Keys */
+window.onload = function() {
+  
+      checkAPIKey();
+  
+}
+
+console.log(giphyAPIKey);
+console.log(marvelAPIKey);
+console.log(marvelPAPIKey);
+
+function checkAPIKey(){
+
+  if(giphyAPIKey==""||marvelAPIKey==""||marvelPAPIKey==""||giphyAPIKey===null||marvelAPIKey===null||marvelPAPIKey===null){
+    let apiModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
+    apiModal.toggle();
+ 
+    
+  }
+ 
+}
+
+apiKeyInput.addEventListener("click", moveAPIData);
+
+function moveAPIData(e){
+  console.log("MoveAPICalled");
+   marvelAPIinput=document.getElementById("marvelPrivateKey").value;//Private API Key Marvel
+marvelPAPIinput=document.getElementById("marvelPublicKey").value;//Public API Key Marvel
+giphyAPIinput=document.getElementById("giphyPrivateKey").value;//Public API Key Marvel
+  
+    
+    marvelAPIKey=marvelAPIinput;
+    marvelPAPIKey=marvelPAPIinput;
+    giphyAPIKey=giphyAPIinput;
+
+    localStorage.setItem("A", marvelAPIKey);
+    localStorage.setItem("B", marvelPAPIKey);
+    localStorage.setItem("C", giphyAPIKey);
+    marvelAPIKey=localStorage.getItem("A");
+marvelPAPIKey=localStorage.getItem("B");
+giphyAPIKey=localStorage.getItem("C");
+    
+    console.log("Giphy Data"+giphyAPIKey);
+    console.log(marvelAPIKey);
+    console.log(marvelPAPIKey);
+
+    if(giphyAPIKey==""||marvelAPIKey==""||marvelPAPIKey==""){
+      location.reload();
+   
+      
+    }
+}
+
+
+// console.log(giphyAPIKey);
+// console.log(marvelAPIKey);
+// console.log(marvelPAPIKey);
 
 
 //****************Marvel-Section************

@@ -77,6 +77,7 @@ https://mbzaig.github.io/Project-MovieBuffs/
 ## Built With
 
 * [JavaScript](https://www.javascript.com/)
+* HTML
 * CSS
 * [Bootstrap](https://getbootstrap.com/)
 * [jQuery](https://jquery.com/)

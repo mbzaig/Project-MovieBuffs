@@ -323,16 +323,20 @@ body {
         margin-bottom: 10px;
     }
 
+
     .marvelMovies {
         height: 450px;
+    }
 
+    .comics-container {
+        margin-top: 50px;
     }
 
     .comics-container img {
         background-color: white;
         display: flex;
-        max-height: 250px;
-        max-width: 145px;
+        max-height: 175px;
+        max-width: 135px;
         object-fit: contain;
 
     }

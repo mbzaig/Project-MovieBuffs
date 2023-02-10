@@ -1,7 +1,9 @@
 //*********Global Variable************ */
-var giphyAPIKey = giphyAPI;
-var marvelAPIKey = marvelAPI; //Private API Key Marvel
-var marvelPAPIKey = marvelPAPI; //Public API Key Marvel
+
+
+var giphyAPIKey = "7fhKbiyRgbd7pXAYUqhpLN5KmQQjxwwf";//giphyAPI;
+var marvelAPIKey ="6e4b0cf1b266a8c740eb503b2024bac833e8c71e";// marvelAPI; //Private API Key Marvel
+var marvelPAPIKey = "aed3b2c4b9d8430e2d035517f52ae62c";//marvelPAPI; //Public API Key Marvel
 var comicSearch = document.getElementById("comic-search");
 var comicInput = document.getElementById("comic-input");
 var searchedComic = "";
